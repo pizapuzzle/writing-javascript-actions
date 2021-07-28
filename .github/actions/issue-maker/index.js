@@ -3,7 +3,7 @@ const github = require("@actions/github");
 
 async function run() {
     try {
-        const issueTitle = core.getInput("issueTitle");
+        const issueTitle = core.getInput("issue-title");
         const jokeBody = core.getInput("joke");
         const token = core.getInput("repo-token");
 
@@ -13,7 +13,7 @@ async function run() {
             `issueTitle: ${issueTitle} 
             jokeBody: ${jokeBody} 
             does token exist: ${token == true} 
-            does octokit exist: ${octokit == true} 
+            does octokit null: ${octokit == null} 
             `
         )
 
