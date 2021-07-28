@@ -10,10 +10,10 @@ async function run() {
         const octokit = new github.getOctokit(token); // ! note
 
         core.info(
-            `issueTitle: #{issueTitle} 
-            jokeBody: #{jokeBody} 
-            does token exist: #{token == true} 
-            does octokit exist: #{octokit == true} 
+            `issueTitle: ${issueTitle} 
+            jokeBody: ${jokeBody} 
+            does token exist: ${token == true} 
+            does octokit exist: ${octokit == true} 
             `
         )
 
