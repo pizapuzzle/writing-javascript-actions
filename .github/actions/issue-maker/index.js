@@ -9,14 +9,23 @@ async function run() {
 
         const octokit = new github.getOctokit(token); // ! note
 
+        core.info(
+            `issueTitle: #{issueTitle} 
+            jokeBody: #{jokeBody} 
+            does token exist: #{token == true} 
+            does octokit exist: #{octokit == true} 
+            `
+        )
+
         // how did they get issues.create? ans:
         // https://octokit.github.io/rest.js/v18#issues
         const newIssue = await octokit.rest.issues.create({
             owner: github.context.repo.owner,
-            repo: github.context.repo.repo, // !where is this from ?
+            repo: github.context.repo.repo, 
             title: issueTitle,
             body: jokeBody,
         });
+        // !where is the repo stuff from ?
     } catch (err) {
         core.setFailed(err.message);
     }
