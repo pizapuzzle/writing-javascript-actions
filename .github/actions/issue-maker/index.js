@@ -11,7 +11,7 @@ async function run() {
 
         // how did they get issues.create? ans:
         // https://octokit.github.io/rest.js/v18#issues
-        const newIssue = await octokit.issues.create({
+        const newIssue = await octokit.rest.issues.create({
             owner: github.context.repo.owner,
             repo: github.context.repo.repo, // !where is this from ?
             title: issueTitle,
