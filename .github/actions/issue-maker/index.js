@@ -7,7 +7,7 @@ async function run() {
         const jokeBody = core.getInput("joke");
         const token = core.getInput("repo-token");
 
-        const octokit = github.getOctokit(token); // ! note
+        const octokit = new github.getOctokit(token); // ! note
 
         // how did they get issues.create? ans:
         // https://octokit.github.io/rest.js/v18#issues
